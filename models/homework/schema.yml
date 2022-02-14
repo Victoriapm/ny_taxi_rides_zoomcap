@@ -1,0 +1,31 @@
+version: 2
+
+sources:
+    - name: staging
+      database: taxi-rides-ny-339813
+      schema: trips_data_all
+
+      tables:
+        - name: fhv_tripdata
+
+models:
+    - name: stg_fhv_tripdata
+      description: >
+        Each row represents a single trip in an FHV.
+      columns:
+        - name: Dispatching_base_num 
+          description: The TLC Base License Number of the base that dispatched the trip
+        - name: Pickup_datetime 
+          description: The date and time of the trip pick-up
+        - name: dropoff_datetime 
+          description: The date and time of the trip dropoff
+        - name: pickup_locationid 
+          description: TLC Taxi Zone in which the trip began
+        - name: dropoff_locationid 
+          description: TLC Taxi Zone in which the trip ended
+        - name: SR_Flag 
+          description: >
+                Indicates if the trip was a part of a shared ride chain offered by a
+                High Volume FHV company (e.g. Uber Pool, Lyft Line). For shared
+                trips, the value is 1. For non-shared rides, this field is null.
+                NOTE: For most High Volume FHV companies, only shared rid
