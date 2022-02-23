@@ -2,3 +2,6 @@
 target/
 dbt_packages/
 logs/
+.DS_Store
+.ipynb_checkpoints/dowload_trip_data-checkpoint.ipynb
+.ipynb_checkpoints/Untitled-checkpoint.ipynb
